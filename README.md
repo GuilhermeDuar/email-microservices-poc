@@ -34,8 +34,11 @@ A aplicação aguarda o recebimento de uma **mensagem via RabbitMQ**, vinda de o
 
 ## ▶️ Como Executar o Projeto
 
-1. **Configuração dos arquivos:**
-    - **docker-compose.yml** para orquestrar a imagens, volume e containers:
+1. **Clone o repositório**
+    - Aqui mesmo no GitHub você pode achar um botão "<> Code" no topo da página, nele é possível baixar o repositório.
+
+2. **Configuração dos arquivos:**
+    - **docker-compose.yml** para orquestrar a imagens, volume e containers. Pode ser criado na pasta raiz do projeto:
        ```yaml
         services:
           app:
@@ -60,7 +63,7 @@ A aplicação aguarda o recebimento de uma **mensagem via RabbitMQ**, vinda de o
             name: {nome do volume}
        ```
 
-    - **Dockerfile** para compilar utilizando maven e gerar a imagem da aplicação
+    - **Dockerfile** para compilar utilizando maven e gerar a imagem da aplicação. Pode ser criado na pasta raiz do projeto:
       ```Dockerfile
       FROM maven:{versão do maven} AS build
       WORKDIR /app
@@ -75,7 +78,7 @@ A aplicação aguarda o recebimento de uma **mensagem via RabbitMQ**, vinda de o
             - Maven: https://hub.docker.com/_/maven
             - Eclipse Temurin JDK: https://hub.docker.com/_/eclipse-temurin
 
-    - **application.yml** para configurar:
+    - **application.yml** para configurar. Pode ser criado em src > main > resources:
         - Aplicação
         - Banco de dados
         - Configurações do RabbitMQ (URL, filas)
@@ -112,8 +115,6 @@ A aplicação aguarda o recebimento de uma **mensagem via RabbitMQ**, vinda de o
               email:
                 name: {nome da fila}
           ```
-2. **Clone o repositório**
-    - Aqui mesmo no GitHub você pode achar um botão "<> Code" no topo da página, nele é possível baixar o repositório.
 
 3. **Executar o docker-compose**
     ```bash
